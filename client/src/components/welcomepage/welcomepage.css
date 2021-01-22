@@ -33,7 +33,7 @@
     font-size: 20px;
     opacity: .9;
     transition: .3s;
-    animation: fadeInSlow ease 4s;
+    animation: fadeInSlow ease 2s;
 }
 
 .welcome-button:hover{
@@ -45,6 +45,7 @@
     flex-flow: column;
     align-items: center;
     margin-top: 5vh;
+    color: white;
 }
 
 .image{
@@ -54,8 +55,14 @@
 }
 
 .welcome-para-text{
-    font-size: 25px;
+    font-size: 35px;
+    margin-bottom: 2vh;
+}
+
+.welcome-para-subtext{
+    font-size: 20px;
     margin-bottom: 4vh;
+    color: rgba(255, 255, 255, 0.6);
 }
 
 .github-info{
@@ -64,6 +71,12 @@
     justify-content: center;
     margin-bottom: 10px;
     opacity: .5;
+    color: white;
+    position: absolute;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
 }
 
 .creator{
