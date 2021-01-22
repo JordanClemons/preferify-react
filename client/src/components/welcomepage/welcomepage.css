@@ -1,0 +1,90 @@
+.welcome-container{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.welcome-header-container{
+    display: flex;
+    margin-left: 2vw;
+}
+
+.welcome-header{
+    font-size: 4vh;
+    opacity: 1;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.welcome-paragraph{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    margin-top: 10vh;
+}
+
+.welcome-button{
+    border-radius: 20px;
+    margin-top: 10vh;
+    width: 225px;
+    height: 50px;
+    background-color: #1DB954;
+    box-shadow: 0 5px 10px rgba(30, 215, 96, .4);
+    color: white;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    opacity: .9;
+    transition: .3s;
+    animation: fadeInSlow ease 4s;
+}
+
+.welcome-button:hover{
+    opacity: 1;
+}
+
+.otherinfo-container{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin-top: 5vh;
+}
+
+.image{
+    width: 66vw;
+    border-radius: 20px;
+    margin-bottom: 4vh;
+}
+
+.welcome-para-text{
+    font-size: 25px;
+    margin-bottom: 4vh;
+}
+
+.github-info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    opacity: .5;
+}
+
+.creator{
+    font-size: 12px;
+    margin: 20px;
+}
+
+.git-logo{
+    width: 30px;
+    height: 30px;
+}
+
+/* Animations */
+
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:.9;}
+    }
+
+@keyframes fadeInSlow {
+    0% {opacity:0;}
+    75% {opacity:0;}
+    100% {opacity:.9;}
+    }
