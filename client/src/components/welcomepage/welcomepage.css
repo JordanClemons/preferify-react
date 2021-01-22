@@ -16,7 +16,7 @@
 
 .welcome-paragraph{
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 40px;
+    font-size: 5vmin;
     margin-top: 10vh;
 }
 
@@ -55,12 +55,12 @@
 }
 
 .welcome-para-text{
-    font-size: 35px;
+    font-size: 5vmin;
     margin-bottom: 2vh;
 }
 
 .welcome-para-subtext{
-    font-size: 20px;
+    font-size: 3vmin;
     margin-bottom: 4vh;
     color: rgba(255, 255, 255, 0.6);
 }
