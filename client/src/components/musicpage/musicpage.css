@@ -34,6 +34,7 @@
     height: 5vh;
     width: 20vmin;
     font-size: 3vmin;
+    -webkit-appearance: none;
 }
 
 .songs-container{

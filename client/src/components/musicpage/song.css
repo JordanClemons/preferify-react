@@ -4,7 +4,6 @@
     width: 70vmin;
     height: 10vh;
     border-radius: 10px;
-    opacity: .7;
     transition: .2s;
     position: relative;
     display: flex;
@@ -12,7 +11,7 @@
 }
 
 .song-bubble:hover{
-    opacity: 1;
+    background-color: #00e64d;
 }
 
 .album-art{
