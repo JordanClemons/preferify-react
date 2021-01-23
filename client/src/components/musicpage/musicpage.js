@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import queryString from 'query-string';
 import {BrowserRouter as Router, Route, Switch, Link, Redirect} from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCircleNotch} from '@fortawesome/free-solid-svg-icons'
 import Song from './song.js';
 import './musicpage.css';
 
@@ -124,7 +126,7 @@ const handleTerm = e =>{
           )}
         </div>
       </div>
-      <div className={`visible-${load}`}><div>Loading</div></div>
+      <div className={`visible-${load}`}><div className="spinner"><FontAwesomeIcon icon={faCircleNotch} class="fa-spin"/>Loading</div></div>
     </div>
   );
 }

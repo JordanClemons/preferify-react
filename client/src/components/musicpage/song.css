@@ -1,5 +1,5 @@
 .song-bubble{
-    background-color: #1DB954;
+    background-color: #2D332E;
     margin-bottom: 2vh;
     width: 70vmin;
     height: 10vh;
@@ -11,7 +11,7 @@
 }
 
 .song-bubble:hover{
-    background-color: #00e64d;
+    background-color: #1DB954;
 }
 
 .album-art{
@@ -20,8 +20,15 @@
     margin: 5%;
 }
 
-.song-title{
+.song-info-container{
     width: 75%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.song-title{
+    width: 100%;
     height: 100%;
     font-size: 2vmax;
     text-align: start;
@@ -29,4 +36,17 @@
     display: flex;
     align-items: center;
     white-space: nowrap;
+}
+
+.song-artist{
+    width: 100%;
+    height: 100%;
+    font-size: 1.25vmax;
+    text-align: start;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    opacity: .4;
+    margin-top: 1%;
 }

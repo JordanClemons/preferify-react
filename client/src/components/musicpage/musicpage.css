@@ -61,7 +61,7 @@
 
 .visible-true{
     background-color: black;
-    color: red;
+    color: white;
     font-size: 40px;
     opacity: 1;
     pointer-events: visible;
@@ -73,4 +73,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    opacity: .5;
+}
+
+.spinner{
+    max-width: 150px;
+    width: 15vw;
+    font-size: 3vmin;
 }
