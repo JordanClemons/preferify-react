@@ -1,0 +1,33 @@
+.song-bubble{
+    background-color: #1DB954;
+    margin-bottom: 2vh;
+    width: 70vmin;
+    height: 10vh;
+    border-radius: 10px;
+    opacity: .7;
+    transition: .2s;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.song-bubble:hover{
+    opacity: 1;
+}
+
+.album-art{
+    border-radius: 50%;
+    height: 75%;
+    margin: 5%;
+}
+
+.song-title{
+    width: 75%;
+    height: 100%;
+    font-size: 2vmax;
+    text-align: start;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}

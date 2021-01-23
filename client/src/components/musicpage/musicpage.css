@@ -1,3 +1,45 @@
-.container{
+.music-container{
     color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.music-header-container{
+    display: flex;
+    margin-left: 2vw;
+}
+
+.music-header{
+    font-size: 4vh;
+    opacity: 1;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.music-input-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vh;
+}
+
+.music-top-header{
+    font-size: 4vmin;
+}
+
+.dropdown{
+    outline: none;
+    border:none;
+    color: white;
+    background-color: #1DB954;
+    margin: .5vw;
+    height: 5vh;
+    width: 20vmin;
+    font-size: 3vmin;
+}
+
+.songs-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2vh;
 }

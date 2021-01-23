@@ -16,7 +16,7 @@
 
 .welcome-paragraph{
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 5vmin;
+    font-size: 4vmax;
     margin-top: 10vmin;
     display: flex;
     justify-content: center;
@@ -68,7 +68,7 @@
 }
 
 .welcome-para-text{
-    font-size: 5vmin;
+    font-size: 2vmax;
     margin-bottom: 2vh;
 }
 
