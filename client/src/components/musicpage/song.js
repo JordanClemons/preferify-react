@@ -10,7 +10,6 @@ function Song(song) {
         Aos.init({duration: 1000, offset:20});
     }, []);
 
-  console.log(song.song);
   return (
     <div className="song-bubble" data-aos="fade-up">
       <img className="album-art" src={song.song.album.images[0].url}></img>

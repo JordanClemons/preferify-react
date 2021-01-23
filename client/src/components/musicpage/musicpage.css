@@ -35,6 +35,14 @@
     width: 20vmin;
     font-size: 3vmin;
     -webkit-appearance: none;
+    opacity: .7;
+    transition: .2s;
+    box-shadow: 0 5px 10px rgba(30, 215, 96, .4);
+    text-align-last:center;
+}
+
+.dropdown:hover{
+    opacity: 1;
 }
 
 .songs-container{
@@ -43,4 +51,26 @@
     justify-content: center;
     align-items: center;
     margin-top: 2vh;
+}
+
+.visible-false{
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+}
+
+.visible-true{
+    background-color: black;
+    color: red;
+    font-size: 40px;
+    opacity: 1;
+    pointer-events: visible;
+    position: absolute;
+    top: 0;
+    left:0;
+    right: 0;
+    bottom:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
