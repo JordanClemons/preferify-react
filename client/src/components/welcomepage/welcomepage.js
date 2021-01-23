@@ -12,6 +12,7 @@ const WelcomePage = () =>{
     }, []);
 
     const DEVOPMENTLINK= "http://localhost:8888/login";
+    const PRODUCTIONLINK= "https://preferify.herokuapp.com/login";
 
     return(
         <div>
@@ -27,7 +28,7 @@ const WelcomePage = () =>{
                     />
                     <p1 className="welcome-para-subtext header-sub">A place for all your favorite Spotify songs.</p1>
                 </div>
-                <form action={DEVOPMENTLINK}>
+                <form action={PRODUCTIONLINK}>
                     <button className="welcome-button">Connect to Spotify</button>
                 </form>
             </div>
