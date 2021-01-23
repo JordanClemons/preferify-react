@@ -1,8 +1,9 @@
 import React from 'react';
+import './musicpage.css';
 
 function MusicPage() {
   return (
-    <div>Music</div>
+    <div className="container">Music</div>
   );
 }
 

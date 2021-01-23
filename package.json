@@ -1,26 +1,15 @@
 {
-  "name": "preferify-react",
+  "name": "oauth-bridge-template",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
+    "start": "node server.js",
     "heroku-postbuild": "cd client && npm install && npm run build"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/JordanClemons/preferify-react.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/JordanClemons/preferify-react/issues"
-  },
-  "homepage": "https://github.com/JordanClemons/preferify-react#readme",
   "dependencies": {
-    "cors": "^2.8.5",
-    "cowsay": "^1.4.0",
-    "express": "^4.17.1"
+    "express": "^4.15.4",
+    "querystring": "^0.2.0",
+    "request": "^2.81.0"
   }
 }

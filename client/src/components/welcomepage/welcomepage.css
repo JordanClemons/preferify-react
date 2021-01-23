@@ -17,12 +17,24 @@
 .welcome-paragraph{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 5vmin;
-    margin-top: 10vh;
+    margin-top: 10vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+
+.moving-text{
+    margin-bottom: 2vh;
+}
+
+.header-sub{
+    animation: fadeInSlow ease 2s;
 }
 
 .welcome-button{
     border-radius: 20px;
-    margin-top: 10vh;
+    margin-top: 3vmin;
     width: 225px;
     height: 50px;
     background-color: #1DB954;
@@ -44,6 +56,7 @@
     display: flex;
     flex-flow: column;
     align-items: center;
+    justify-content: center;
     margin-top: 5vh;
     color: white;
 }
@@ -63,6 +76,13 @@
     font-size: 3vmin;
     margin-bottom: 4vh;
     color: rgba(255, 255, 255, 0.6);
+    width: 70vmin;
+}
+
+.other-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .github-info{

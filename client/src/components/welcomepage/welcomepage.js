@@ -11,6 +11,8 @@ const WelcomePage = () =>{
         Aos.init({duration: 2000});
     }, []);
 
+    const DEVOPMENTLINK= "http://localhost:8888/login";
+
     return(
         <div>
             <div className="welcome-container">
@@ -19,20 +21,30 @@ const WelcomePage = () =>{
                 </div>
                 <div className="welcome-paragraph">
                     <Typed
+                    className="moving-text"
                     strings={['Find your favorite songs. At any time.', 'Make an awesome playlist.', 'Weclome to Preferify.']}
                     typeSpeed={40}
                     />
+                    <p1 className="welcome-para-subtext header-sub">A place for all your favorite Spotify songs.</p1>
                 </div>
-                <button className="welcome-button">Connect to Spotify</button>
+                <form action={DEVOPMENTLINK}>
+                    <button className="welcome-button">Connect to Spotify</button>
+                </form>
             </div>
             <div className="otherinfo-container">
-                <img src= {Placeholder} className="image"  data-aos="fade-up"/>
-                <p1 className="welcome-para-text"  data-aos="fade-up"> Find your favorite songs. At any time.</p1>
-                <p1 className="welcome-para-subtext"  data-aos="fade-up"> Preferify uses Spotify's official API to find your most listened to songs of any time period.</p1>
-                <img src= {Placeholder} className="image" data-aos="fade-up"/>
-                <p1 className="welcome-para-text" data-aos="fade-up">Make an awesome playlist.</p1>
-                <p1 className="welcome-para-subtext"  data-aos="fade-up">Transform your most listened to songs into a playlist with the touch of a button.</p1>
-                <img src= {Placeholder} className="image" data-aos="fade-up"/>
+                <div>
+                    <img src= {Placeholder} className="image"  data-aos="fade-up"/>
+                </div>
+                <div className="other-div" data-aos="fade-up">
+                    <p1 className="welcome-para-text"  > Find your favorite songs. At any time.</p1>
+                    <p1 className="welcome-para-subtext"  > Preferify uses Spotify's official API to find your most listened to songs of any time period.</p1>
+                    <img src= {Placeholder} className="image" />
+                </div>
+                <div className="other-div" data-aos="fade-up">
+                    <p1 className="welcome-para-text" >Make an awesome playlist.</p1>
+                    <p1 className="welcome-para-subtext" >Transform your most listened to songs into a playlist with the touch of a button.</p1>
+                    <img src= {Placeholder} className="image" />
+                </div>
             </div>
             <div className="github-info" >
                 <p1 className="creator">Created by Jordan Clemons</p1>
