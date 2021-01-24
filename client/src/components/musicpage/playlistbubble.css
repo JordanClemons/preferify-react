@@ -1,5 +1,5 @@
 .playlistbubble-container{
-    background-color: black;
+    background-color: #2D332E;
     color: white;
     width: 70vmin;
     height: 35vmin;
@@ -17,11 +17,11 @@
 }
 
 .playlist-input{
-    width: 30vmax;
+    width: 75%;
     height: 2vmax;
-    margin-top: 8%;
+    margin-top: 2.5vmax;
     outline: none;
-    font-size: 1.5vmax;
+    font-size: 1.1vmax;
 }
 
 
@@ -32,7 +32,7 @@
     height: 2vmax;
     width: 10vmax;
     font-size: 1.25vmax;
-    margin-top: 7%;
+    margin-top: 2.25vmax;
     border-radius: 20px;
     outline: none;
 }

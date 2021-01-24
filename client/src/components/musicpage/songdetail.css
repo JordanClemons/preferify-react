@@ -1,8 +1,8 @@
-.modal-rectangle{
-    background-color: black;
+.modal-rectangle-detail{
+    background-color: #2D332E;
     color: white;
     width: 70vmin;
-    height: 35vmin;
+    height: 15vmax;
     border-radius: 15px;
     position: relative;
     overflow: hidden;

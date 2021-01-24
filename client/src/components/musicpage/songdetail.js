@@ -5,7 +5,7 @@ function SongDetail({song}) {
 
     if(song !== undefined){
         return (
-            <div className="modal-rectangle">
+            <div className="modal-rectangle-detail">
                 <div className="song-details">
                     <img className="album-art-detail" src={song.album.images[0].url}></img>
                 </div>

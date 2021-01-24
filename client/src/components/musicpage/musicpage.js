@@ -145,15 +145,6 @@ const closeModal = e => {
   return (
     <div>
       <div className="music-container">
-        <div className="music-header-container">
-          <h1 className='music-header'>
-            <Typed
-                    className="moving-text"
-                    strings={['Preferify']}
-                    typeSpeed={40}
-                    />
-          </h1>
-        </div>
         <div className ="music-input-container">
           <h1 className="music-top-header">Your top songs</h1>
           <div className="select-container">
@@ -175,6 +166,12 @@ const closeModal = e => {
             <Song song={song} onClick={modalOn}></Song>
           )}
         </div>
+        <div className='music-header'>
+            <Typed
+                    strings={['Preferify']}
+                    typeSpeed={40}
+                    />
+          </div>
       </div>
       <div className="playlist-button"><div className="button-flex" onClick={() => playlistModalOn()}><FontAwesomeIcon icon={faCompactDisc} size="3x"/> Make playlist</div></div>
       <div className={`modal-background modalvisible-${modal}`}>
