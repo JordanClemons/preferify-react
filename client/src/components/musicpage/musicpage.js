@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import queryString from 'query-string';
 import {BrowserRouter as Router, Route, Switch, Link, Redirect} from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCircleNotch} from '@fortawesome/free-solid-svg-icons'
+import { faCircleNotch, faCompactDisc} from '@fortawesome/free-solid-svg-icons'
 import Typed from 'react-typed';
 import Song from './song.js';
 import SongDetail from './songdetail.js';
@@ -160,6 +160,7 @@ const closeModal = e => {
               <option value="long_term">all time</option>
             </select>
           </div>
+          
         </div>
         <div className="songs-container">
           {songs.map((song) =>
@@ -167,6 +168,7 @@ const closeModal = e => {
           )}
         </div>
       </div>
+      <div className="playlist-button"><div><FontAwesomeIcon icon={faCompactDisc}/> Make playlist</div></div>
       <div className={`modal-background modalvisible-${modal}`}>
         <div ref={node}><SongDetail song={selectedSong} ref={node}></SongDetail></div>
       </div>

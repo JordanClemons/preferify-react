@@ -39,7 +39,7 @@
     width: 20vmin;
     font-size: 3vmin;
     -webkit-appearance: none;
-    opacity: .7;
+    opacity: .8;
     transition: .2s;
     text-align-last:center;
 }
@@ -51,6 +51,23 @@
 
 .dropdown:hover{
     opacity: 1;
+}
+
+.playlist-button{
+    position:fixed;
+    left: 70%;
+    bottom: 10vmax;
+    border-radius: 50%;
+    background-color: #1DB954;
+    color: white;
+    width: 20vmin;
+    height: 20vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.95vmin;
+    overflow: hidden;
+    transition: .3s;
 }
 
 .songs-container{
