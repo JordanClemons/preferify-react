@@ -39,7 +39,6 @@
     width: 20vmin;
     font-size: 3vmin;
     -webkit-appearance: none;
-    opacity: .8;
     transition: .2s;
     text-align-last:center;
 }
@@ -47,10 +46,6 @@
 .select-container{
     display: flex;
 
-}
-
-.dropdown:hover{
-    opacity: 1;
 }
 
 .playlist-button{
@@ -65,9 +60,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.95vmin;
+    font-size: 2.5vmin;
     overflow: hidden;
     transition: .3s;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .9);
+}
+
+.button-flex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .songs-container{
@@ -140,3 +142,4 @@
     height: 30vmin;
     border-radius: 15px;
 }
+

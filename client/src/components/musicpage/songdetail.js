@@ -3,7 +3,6 @@ import './songdetail.css';
 
 function SongDetail({song}) {
 
-console.log(song);
     if(song !== undefined){
         return (
             <div className="modal-rectangle">

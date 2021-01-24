@@ -1,0 +1,38 @@
+.playlistbubble-container{
+    background-color: black;
+    color: white;
+    width: 70vmin;
+    height: 35vmin;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.playlist-title{
+    font-size: 2.25vmax;
+    margin-top: 8%;
+}
+
+.playlist-input{
+    width: 30vmax;
+    height: 2vmax;
+    margin-top: 8%;
+    outline: none;
+    font-size: 1.5vmax;
+}
+
+
+.playlistbubble-button{
+    border: none;
+    background-color: #1DB954;
+    color: white;
+    height: 2vmax;
+    width: 10vmax;
+    font-size: 1.25vmax;
+    margin-top: 7%;
+    border-radius: 20px;
+    outline: none;
+}

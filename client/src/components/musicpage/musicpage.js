@@ -6,6 +6,7 @@ import { faCircleNotch, faCompactDisc} from '@fortawesome/free-solid-svg-icons'
 import Typed from 'react-typed';
 import Song from './song.js';
 import SongDetail from './songdetail.js';
+import PlaylistBubble from './playlistbubble.js';
 import './musicpage.css';
 
 
@@ -19,12 +20,14 @@ function MusicPage() {
   const [load, setLoad] = useState(false);
   const [modal, setModal] = useState(false);
   const [selectedSong, setSelectedSong] = useState();
+  const [playlistModal, setPlaylistModal] = useState(false);
 
   const [shortTerm, setShortTerm] = useState([]);
   const [mediumTerm, setMediumTerm] = useState([]);
   const [longTerm, setLongTerm] = useState([]);
 
   const node = useRef();
+  const node2 = useRef();
 
 
   const getSongs = () =>{
@@ -59,14 +62,19 @@ const modalOn = (song) => {
   setSelectedSong(song);
 }
 
+const playlistModalOn = () =>{
+  setPlaylistModal(!playlistModal);
+}
+
 const closeModal = e => {
-  if (node.current.contains(e.target)){
+  if (node.current.contains(e.target) || node2.current.contains(e.target)){
     // inside click
     return;
   }
   // outside click
   setModal(false);
   setSelectedSong();
+  setPlaylistModal(false);
 };
 
 /* UseEffect renders */
@@ -168,11 +176,14 @@ const closeModal = e => {
           )}
         </div>
       </div>
-      <div className="playlist-button"><div><FontAwesomeIcon icon={faCompactDisc}/> Make playlist</div></div>
+      <div className="playlist-button"><div className="button-flex" onClick={() => playlistModalOn()}><FontAwesomeIcon icon={faCompactDisc} size="3x"/> Make playlist</div></div>
       <div className={`modal-background modalvisible-${modal}`}>
-        <div ref={node}><SongDetail song={selectedSong} ref={node}></SongDetail></div>
+        <div ref={node}><SongDetail song={selectedSong} ></SongDetail></div>
       </div>
       <div className={`visible-${load}`}><div className="spinner"><FontAwesomeIcon icon={faCircleNotch} class="fa-spin"/>Loading</div></div>
+      <div className={`modal-background modalvisible-${playlistModal}`}>
+        <div ref={node2}><PlaylistBubble limit={limit} time={time}></PlaylistBubble></div>
+      </div>
     </div>
   );
 }
