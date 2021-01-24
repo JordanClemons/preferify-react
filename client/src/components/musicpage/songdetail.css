@@ -1,0 +1,24 @@
+.modal-rectangle{
+    background-color: black;
+    color: white;
+    width: 70vmin;
+    height: 35vmin;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.album-art-detail{
+    border-radius: 50%;
+    width: 20%;
+    margin-top: 2vh;
+}
+
+.song-name-artist-detail{
+    margin-top: 5vmin;
+    font-size: 3vmin;
+}
+
+.spotify-link{
+    color: #1DB954;
+}

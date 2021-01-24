@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import queryString from 'query-string';
 import {BrowserRouter as Router, Route, Switch, Link, Redirect} from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleNotch} from '@fortawesome/free-solid-svg-icons'
+import Typed from 'react-typed';
 import Song from './song.js';
+import SongDetail from './songdetail.js';
 import './musicpage.css';
 
 
@@ -15,10 +17,15 @@ function MusicPage() {
   const [time, setTime] = useState("short_term");
   const [limit, setLimit] = useState();
   const [load, setLoad] = useState(false);
+  const [modal, setModal] = useState(false);
+  const [selectedSong, setSelectedSong] = useState();
 
   const [shortTerm, setShortTerm] = useState([]);
   const [mediumTerm, setMediumTerm] = useState([]);
   const [longTerm, setLongTerm] = useState([]);
+
+  const node = useRef();
+
 
   const getSongs = () =>{
     setLoad(true);
@@ -37,26 +44,39 @@ function MusicPage() {
     setTimeout(() => setLoad(false), 500);
 }
 
-//Changes number of songs shown
-const songSlice = () =>{
-
-}
+/* Functions */
 
 const handleLimit = e =>{
   setLimit(e.target.value);
-  var newSongs =songs.slice(0, limit);
 }
 
 const handleTerm = e =>{
   setTime(e.target.value);
 }
 
+const modalOn = (song) => {
+  setModal(!modal);
+  setSelectedSong(song);
+}
+
+const closeModal = e => {
+  if (node.current.contains(e.target)){
+    // inside click
+    return;
+  }
+  // outside click
+  setModal(false);
+  setSelectedSong();
+};
+
+/* UseEffect renders */
+
   useEffect(() =>{
     getSongs();
   }, []);
 
   useEffect(() =>{
-    if(shortTerm.length > 0){
+    if(shortTerm.length > 0 && shortTerm !== undefined){
       setSongs(shortTerm);
       setLimit(10);
     }
@@ -92,10 +112,23 @@ const handleTerm = e =>{
     }
   }, [time]);
 
-  useEffect(() =>{
-  }, [limit, time]);
+  useEffect(() => {
+    document.addEventListener("mousedown", closeModal);
+
+    return () => {
+      document.removeEventListener("mousedown", closeModal);
+    };
+  }, []);
+
+  /* Returns */
 
   if(token == null){
+    return(
+      <Redirect to="/"></Redirect>  //If not logged in go back to login
+    )
+  }
+
+  if(shortTerm === undefined){
     return(
       <Redirect to="/"></Redirect>  //If not logged in go back to login
     )
@@ -105,26 +138,37 @@ const handleTerm = e =>{
     <div>
       <div className="music-container">
         <div className="music-header-container">
-          <h1 className='music-header'>Preferify</h1>
+          <h1 className='music-header'>
+            <Typed
+                    className="moving-text"
+                    strings={['Preferify']}
+                    typeSpeed={40}
+                    />
+          </h1>
         </div>
         <div className ="music-input-container">
           <h1 className="music-top-header">Your top songs</h1>
-          <select className="dropdown" onChange={handleLimit}>
-            <option value="10">10 songs</option>
-            <option value="25">25 songs</option>
-            <option value="50">50 songs</option>
-          </select>
-          <select className="dropdown" onChange={handleTerm}>
-            <option value="short_term">1 month</option>
-            <option value="medium_term">6 months</option>
-            <option value="long_term">all time</option>
-          </select>
+          <div className="select-container">
+            <select className="dropdown" onChange={handleLimit}>
+              <option value="10">10 songs</option>
+              <option value="25">25 songs</option>
+              <option value="50">50 songs</option>
+            </select>
+            <select className="dropdown" onChange={handleTerm}>
+              <option value="short_term">1 month</option>
+              <option value="medium_term">6 months</option>
+              <option value="long_term">all time</option>
+            </select>
+          </div>
         </div>
         <div className="songs-container">
           {songs.map((song) =>
-            <Song song={song}></Song>
+            <Song song={song} onClick={modalOn}></Song>
           )}
         </div>
+      </div>
+      <div className={`modal-background modalvisible-${modal}`}>
+        <div ref={node}><SongDetail song={selectedSong} ref={node}></SongDetail></div>
       </div>
       <div className={`visible-${load}`}><div className="spinner"><FontAwesomeIcon icon={faCircleNotch} class="fa-spin"/>Loading</div></div>
     </div>

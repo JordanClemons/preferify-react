@@ -1,11 +1,13 @@
 .music-container{
     color: white;
     font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .music-header-container{
     display: flex;
-    margin-left: 2vw;
 }
 
 .music-header{
@@ -16,9 +18,11 @@
 
 .music-input-container{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 5vh;
+    justify-content: start;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 70vmin;
+    margin-top: 0vh;
 }
 
 .music-top-header{
@@ -37,8 +41,12 @@
     -webkit-appearance: none;
     opacity: .7;
     transition: .2s;
-    box-shadow: 0 5px 10px rgba(30, 215, 96, .4);
     text-align-last:center;
+}
+
+.select-container{
+    display: flex;
+
 }
 
 .dropdown:hover{
@@ -80,4 +88,38 @@
     max-width: 150px;
     width: 15vw;
     font-size: 3vmin;
+}
+
+/*Popop */
+.modal-background{
+    opacity: 0;
+    pointer-events: none;
+    transition: .5s;
+    position: fixed;
+    /* width: 100%;
+    height: 100%; */
+    top: 0;
+    left:0;
+    right: 0;
+    bottom:0;
+    background: rgba(0,0,0,.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  .modalvisible-true{
+    opacity: 1;
+    pointer-events: visible;
+    height: 100vh;
+    overflow-y: hidden;
+  }
+
+.modal-rectangle{
+    background-color: black;
+    color: white;
+    width: 70vmin;
+    height: 30vmin;
+    border-radius: 15px;
 }
