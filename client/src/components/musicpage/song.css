@@ -1,7 +1,7 @@
 .song-bubble{
     background-color: #2D332E;
     margin-bottom: 2vh;
-    width: 70vmin;
+    width: 80vmin;
     height: 5vmax;
     border-radius: 10px;
     transition: .2s;

@@ -21,6 +21,7 @@ function MusicPage() {
   const [modal, setModal] = useState(false);
   const [selectedSong, setSelectedSong] = useState();
   const [playlistModal, setPlaylistModal] = useState(false);
+  const [playlistname, setPlaylistname] = useState("");
 
   const [shortTerm, setShortTerm] = useState([]);
   const [mediumTerm, setMediumTerm] = useState([]);
@@ -45,6 +46,20 @@ function MusicPage() {
     }).then(response => response.json())
     .then(data => setLongTerm(data.items))
     setTimeout(() => setLoad(false), 500);
+}
+
+const savePlaylist = (playlistName) =>{
+  fetch('https://api.spotify.com/v1/me',{
+    headers: {'Authorization': 'Bearer ' + token}
+  }).then(response => response.json())
+  .then((data) => {
+    var userID = data.id;
+    fetch(`https://api.spotify.com/v1/users/${userID}/playlists`, {
+      method: 'POST',
+      headers: {'Authorization': 'Bearer ' + token},
+      body: JSON.stringify({name: playlistName})
+    })
+  })
 }
 
 /* Functions */
@@ -84,9 +99,11 @@ const closeModal = e => {
   }, []);
 
   useEffect(() =>{
-    if(shortTerm.length > 0 && shortTerm !== undefined){
-      setSongs(shortTerm);
-      setLimit(10);
+    if(shortTerm !== undefined){
+      if(shortTerm.length > 0 && shortTerm !== undefined){
+        setSongs(shortTerm);
+        setLimit(10);
+      }
     }
   }, [shortTerm]);
 
@@ -173,13 +190,13 @@ const closeModal = e => {
                     />
           </div>
       </div>
-      <div className="playlist-button"><div className="button-flex" onClick={() => playlistModalOn()}><FontAwesomeIcon icon={faCompactDisc} size="3x"/> Make playlist</div></div>
+      <div className="playlist-button"><div className="button-flex" onClick={() => playlistModalOn()}><FontAwesomeIcon icon={faCompactDisc} size="3x" className="playlist-icon"/> <div className="playlist-button-text">Make it a playlist</div></div></div>
       <div className={`modal-background modalvisible-${modal}`}>
         <div ref={node}><SongDetail song={selectedSong} ></SongDetail></div>
       </div>
       <div className={`visible-${load}`}><div className="spinner"><FontAwesomeIcon icon={faCircleNotch} class="fa-spin"/>Loading</div></div>
       <div className={`modal-background modalvisible-${playlistModal}`}>
-        <div ref={node2}><PlaylistBubble limit={limit} time={time}></PlaylistBubble></div>
+        <div ref={node2}><PlaylistBubble limit={limit} time={time} savePlaylist={savePlaylist} playlistname={playlistname} setPlaylistname={setPlaylistname}></PlaylistBubble></div>
       </div>
     </div>
   );

@@ -25,7 +25,7 @@
     justify-content: start;
     align-items: flex-start;
     flex-direction: column;
-    width: 70vmin;
+    width: 80vmin;
     margin-top: 8vmax;
 }
 
@@ -36,11 +36,11 @@
 .dropdown{
     outline: none;
     color: white;
-    border-width: .2vw;
+    border-width: .25vmax;
     border-color: grey;
     background-color: #1DB954;
-    margin: .5vw;
-    height: 2.75vmax;
+    margin-right: 1vw;
+    height: 3.75vmax;
     width: 20vmin;
     font-size: 3vmin;
     -webkit-appearance: none;
@@ -65,10 +65,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2.5vmin;
+    font-size: 2.3vmin;
     overflow: hidden;
     transition: .3s;
     box-shadow: 0 5px 10px rgba(0, 0, 0, .9);
+}
+
+.playlist-icon{
+    opacity: .3;
+    font-size: 12vmin;
+}
+
+.playlist-button-text{
+    opacity: 1;
+    font-weight: bold;
+    position: absolute;
+    margin-top: 2.1vmax;
 }
 
 .button-flex{
