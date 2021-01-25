@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './playlistbubble.css';
 
-function PlaylistBubble({limit, time, savePlaylist, playlistname, setPlaylistname, finishPlaylist, playlistURL}) {
+function PlaylistBubble({limit, time, savePlaylist, playlistname, setPlaylistname, finishPlaylist, playlistURL, playlistImages}) {
 
     const [timespan, setTimespan] = useState();
     const [number, setNumber] = useState("10");
@@ -54,7 +54,6 @@ function PlaylistBubble({limit, time, savePlaylist, playlistname, setPlaylistnam
         }
     }, [submitPlaylistName]);
 
-    console.log(finishPlaylist);
   return (
     <div className="playlistbubble-container">
         <div className={`playlist-flexbox-${finishPlaylist}`}>
@@ -64,6 +63,12 @@ function PlaylistBubble({limit, time, savePlaylist, playlistname, setPlaylistnam
         </div>
         <div className={`playlistdone-flexbox-${finishPlaylist}`}>
             <p1>Playlist created!</p1>
+            <div className="images-flex">
+                <img className="playlist-image" src={playlistImages[0]}></img>
+                <img className="playlist-image" src={playlistImages[1]}></img>
+                <img className="playlist-image" src={playlistImages[2]}></img>
+                <img className="playlist-image" src={playlistImages[3]}></img>
+            </div>
             <a href={playlistURL} target="_blank" className="playlist-link">Open in Spotify</a>
         </div>
     </div>

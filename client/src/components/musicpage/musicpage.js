@@ -25,6 +25,7 @@ function MusicPage() {
   const [songURI, setSongURI] = useState([]);
   const [playlistURL, setPlaylistURL] = useState("");
   const [finishplaylist, setFinishplaylist] = useState(false);
+  const [playlistImages, setPlaylistImages] = useState();
 
   const [shortTerm, setShortTerm] = useState([]);
   const [mediumTerm, setMediumTerm] = useState([]);
@@ -69,7 +70,7 @@ const savePlaylist = (playlistName) =>{
         method: 'POST', 
         headers: {'Authorization': 'Bearer ' + token},
         body: JSON.stringify({uris: songURI})
-      }).then(setFinishplaylist(true))
+      }).then((setFinishplaylist(true)))
     })
   })
 }
@@ -154,6 +155,14 @@ const closeModal = e => {
 
   useEffect(() => {
       setSongURI(songs.map(song => song.uri))
+      /* Generating playlist image */
+      if(songs.length > 0){
+        var images = [];
+        for(var x = 0; x < 4; x++){
+          images.push(songs[x].album.images[0].url);
+        }
+        setPlaylistImages(images);
+      }
   }, [songs]);
 
   useEffect(() => {
@@ -209,13 +218,13 @@ const closeModal = e => {
                     />
           </div>
       </div>
-      <div className="playlist-button"><div className="button-flex" onClick={() => playlistModalOn()}><FontAwesomeIcon icon={faCompactDisc} size="3x" className="playlist-icon"/> <div className="playlist-button-text">Make it a playlist</div></div></div>
+      <div className="playlist-button"><div className="button-flex" onClick={() => playlistModalOn()}><FontAwesomeIcon icon={faCompactDisc} size="3x" className="playlist-icon"/> <div className="playlist-button-text">Playlist</div></div></div>
       <div className={`modal-background modalvisible-${modal}`}>
         <div ref={node}><SongDetail song={selectedSong} ></SongDetail></div>
       </div>
       <div className={`visible-${load}`}><div className="spinner"><FontAwesomeIcon icon={faCircleNotch} class="fa-spin"/>Loading</div></div>
       <div className={`modal-background modalvisible-${playlistModal}`}>
-        <div ref={node2}><PlaylistBubble limit={limit} time={time} savePlaylist={savePlaylist} playlistname={playlistname} setPlaylistname={setPlaylistname} finishPlaylist={finishplaylist} playlistURL={playlistURL}></PlaylistBubble></div>
+        <div ref={node2}><PlaylistBubble limit={limit} time={time} savePlaylist={savePlaylist} playlistname={playlistname} setPlaylistname={setPlaylistname} finishPlaylist={finishplaylist} playlistURL={playlistURL} playlistImages={playlistImages}></PlaylistBubble></div>
       </div>
     </div>
   );

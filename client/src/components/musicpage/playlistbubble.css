@@ -67,7 +67,23 @@
     pointer-events: none;
 }
 
+.images-flex{
+    background-color: red;
+    width: 20vmin;
+    height: 20vmin;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: row;
+    flex-flow: wrap;
+    margin-top: 4vmin;
+}
+
+.playlist-image{
+    width: 10vmin;
+}
+
 .playlist-link{
     color: #1DB954;
-    margin-top: 10vmin;
+    margin-top: 2vmin;
 }

@@ -65,14 +65,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2.3vmin;
+    font-size: 4.3vmin;
     overflow: hidden;
     transition: .3s;
     box-shadow: 0 5px 10px rgba(0, 0, 0, .9);
 }
 
 .playlist-icon{
-    opacity: .3;
+    opacity: .4;
     font-size: 12vmin;
 }
 
@@ -80,7 +80,7 @@
     opacity: 1;
     font-weight: bolder;
     position: absolute;
-    margin-top: 25%;
+    margin-top: 15%;
     width: 100%;
 }
 
