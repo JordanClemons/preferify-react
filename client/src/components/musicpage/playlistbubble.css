@@ -1,27 +1,37 @@
 .playlistbubble-container{
     background-color: #2D332E;
     color: white;
-    width: 70vmin;
-    height: 35vmin;
+    width: 80vmin;
+    height: 45vmin;
     border-radius: 15px;
     position: relative;
     overflow: hidden;
+}
+
+.playlist-flexbox-false{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+    height: 100%;
+}
+
+.playlist-flexbox-true{
+    display: none;
+    pointer-events: none;
 }
 
 .playlist-title{
     font-size: 2.25vmax;
-    margin-top: 8%;
+    margin: 4vmin;
 }
 
 .playlist-input{
     width: 75%;
-    height: 2.5vmax;
-    margin-top: 3vmin;
+    height: 5vh;
     outline: none;
     font-size: 1.3vmax;
+    margin: 4vmin;
 }
 
 
@@ -29,10 +39,35 @@
     border: none;
     background-color: #1DB954;
     color: white;
-    height: 2vmax;
-    width: 10vmax;
+    height: 4.5vh;
+    width: 40%;
     font-size: 1.25vmax;
-    margin-top: 2.25vmax;
     border-radius: 20px;
     outline: none;
+    margin: 4vmin;
+    opacity: .7;
+    transition: .3s;
+}
+
+.playlistbubble-button:hover{
+    opacity: 1;
+}
+
+.playlistdone-flexbox-true{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 2.25vmax;
+}
+
+.playlistdone-flexbox-false{
+    display: none;
+    pointer-events: none;
+}
+
+.playlist-link{
+    color: #1DB954;
+    margin-top: 10vmin;
 }

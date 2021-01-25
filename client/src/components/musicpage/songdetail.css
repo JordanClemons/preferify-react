@@ -1,21 +1,27 @@
 .modal-rectangle-detail{
     background-color: #2D332E;
     color: white;
-    width: 70vmin;
-    height: 15vmax;
+    width: 80vmin;
+    height: 35vmin;
     border-radius: 15px;
     position: relative;
     overflow: hidden;
 }
 
+.songdetail-flexbox{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .album-art-detail{
     border-radius: 50%;
     width: 20%;
-    margin-top: 2vh;
 }
 
 .song-name-artist-detail{
-    margin-top: 1vmin;
     font-size: 3vmin;
     white-space: nowrap;
 }

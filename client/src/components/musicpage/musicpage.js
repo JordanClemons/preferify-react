@@ -23,6 +23,8 @@ function MusicPage() {
   const [playlistModal, setPlaylistModal] = useState(false);
   const [playlistname, setPlaylistname] = useState("");
   const [songURI, setSongURI] = useState([]);
+  const [playlistURL, setPlaylistURL] = useState("");
+  const [finishplaylist, setFinishplaylist] = useState(false);
 
   const [shortTerm, setShortTerm] = useState([]);
   const [mediumTerm, setMediumTerm] = useState([]);
@@ -61,12 +63,13 @@ const savePlaylist = (playlistName) =>{
       body: JSON.stringify({name: playlistName})
     }).then(response => response.json())
     .then((data) => {
+      setPlaylistURL(data.external_urls.spotify);
       var playlistID = data.id;
       fetch(`https://api.spotify.com/v1/users/${userID}/playlists/${playlistID}/tracks`, {
         method: 'POST', 
         headers: {'Authorization': 'Bearer ' + token},
         body: JSON.stringify({uris: songURI})
-      })
+      }).then(setFinishplaylist(true))
     })
   })
 }
@@ -100,6 +103,8 @@ const closeModal = e => {
   setSelectedSong();
   setPlaylistModal(false);
   setPlaylistname("");
+  setPlaylistURL("");
+  setFinishplaylist(false);
 };
 
 /* UseEffect renders */
@@ -210,7 +215,7 @@ const closeModal = e => {
       </div>
       <div className={`visible-${load}`}><div className="spinner"><FontAwesomeIcon icon={faCircleNotch} class="fa-spin"/>Loading</div></div>
       <div className={`modal-background modalvisible-${playlistModal}`}>
-        <div ref={node2}><PlaylistBubble limit={limit} time={time} savePlaylist={savePlaylist} playlistname={playlistname} setPlaylistname={setPlaylistname}></PlaylistBubble></div>
+        <div ref={node2}><PlaylistBubble limit={limit} time={time} savePlaylist={savePlaylist} playlistname={playlistname} setPlaylistname={setPlaylistname} finishPlaylist={finishplaylist} playlistURL={playlistURL}></PlaylistBubble></div>
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './playlistbubble.css';
 
-function PlaylistBubble({limit, time, savePlaylist, playlistname, setPlaylistname}) {
+function PlaylistBubble({limit, time, savePlaylist, playlistname, setPlaylistname, finishPlaylist, playlistURL}) {
 
     const [timespan, setTimespan] = useState();
     const [number, setNumber] = useState("10");
@@ -54,11 +54,18 @@ function PlaylistBubble({limit, time, savePlaylist, playlistname, setPlaylistnam
         }
     }, [submitPlaylistName]);
 
+    console.log(finishPlaylist);
   return (
     <div className="playlistbubble-container">
-        <p1 className="playlist-title">Playlist Title</p1>
-        <input className="playlist-input" type="text" placeholder={`My Preferify top ${limit} songs ${timespan}`} onChange={e => changePlaylistName(e)} value={playlistname}></input>
-        <button className="playlistbubble-button" onClick={() => checkPlaylistName()}>Make Playlist</button>
+        <div className={`playlist-flexbox-${finishPlaylist}`}>
+            <p1 className="playlist-title">Playlist Title</p1>
+            <input className="playlist-input" type="text" placeholder={`My Preferify top ${limit} songs ${timespan}`} onChange={e => changePlaylistName(e)} value={playlistname}></input>
+            <button className="playlistbubble-button" onClick={() => checkPlaylistName()}>Make Playlist</button>
+        </div>
+        <div className={`playlistdone-flexbox-${finishPlaylist}`}>
+            <p1>Playlist created!</p1>
+            <a href={playlistURL} target="_blank" className="playlist-link">Open in Spotify</a>
+        </div>
     </div>
   );
 }
