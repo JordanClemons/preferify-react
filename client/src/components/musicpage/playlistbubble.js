@@ -9,15 +9,13 @@ function PlaylistBubble({limit, time, savePlaylist, playlistname, setPlaylistnam
 
     const changePlaylistName = e =>{
         if(e.target.value.length <= 200){
-            console.log(e.target.value.length);
             setPlaylistname(e.target.value);
         }
     }
 
     const checkPlaylistName = () =>{
-        console.log("pls");
         if(playlistname === ""){
-            setSubmitPlaylistName("Preferify  my top " + number + " songs " + timespan);
+            setSubmitPlaylistName("Preferify my top " + number + " songs " + timespan);
         }
         else{setSubmitPlaylistName(playlistname);}
     }
@@ -51,13 +49,11 @@ function PlaylistBubble({limit, time, savePlaylist, playlistname, setPlaylistnam
     }, [limit]);
 
     useEffect(() =>{
-        console.log("yoooo");
         if(submitPlaylistName.length > 0){
             savePlaylist(submitPlaylistName);
         }
     }, [submitPlaylistName]);
 
-    console.log(submitPlaylistName);
   return (
     <div className="playlistbubble-container">
         <p1 className="playlist-title">Playlist Title</p1>

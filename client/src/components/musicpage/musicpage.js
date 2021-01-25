@@ -22,6 +22,7 @@ function MusicPage() {
   const [selectedSong, setSelectedSong] = useState();
   const [playlistModal, setPlaylistModal] = useState(false);
   const [playlistname, setPlaylistname] = useState("");
+  const [songURI, setSongURI] = useState([]);
 
   const [shortTerm, setShortTerm] = useState([]);
   const [mediumTerm, setMediumTerm] = useState([]);
@@ -58,6 +59,14 @@ const savePlaylist = (playlistName) =>{
       method: 'POST',
       headers: {'Authorization': 'Bearer ' + token},
       body: JSON.stringify({name: playlistName})
+    }).then(response => response.json())
+    .then((data) => {
+      var playlistID = data.id;
+      fetch(`https://api.spotify.com/v1/users/${userID}/playlists/${playlistID}/tracks`, {
+        method: 'POST', 
+        headers: {'Authorization': 'Bearer ' + token},
+        body: JSON.stringify({uris: songURI})
+      })
     })
   })
 }
@@ -137,6 +146,10 @@ const closeModal = e => {
       setSongs(newSongs);
     }
   }, [time]);
+
+  useEffect(() => {
+      setSongURI(songs.map(song => song.uri))
+  }, [songs]);
 
   useEffect(() => {
     document.addEventListener("mousedown", closeModal);
