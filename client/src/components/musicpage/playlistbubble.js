@@ -54,6 +54,13 @@ function PlaylistBubble({limit, time, savePlaylist, playlistname, setPlaylistnam
         }
     }, [submitPlaylistName]);
 
+    playlistImages.map((image) => {
+        console.log(image);
+    })
+    console.log(playlistImages[0]);
+
+    const lol = ["papa", "mama", "dada"];
+
   return (
     <div className="playlistbubble-container">
         <div className={`playlist-flexbox-${finishPlaylist}`}>
@@ -64,10 +71,9 @@ function PlaylistBubble({limit, time, savePlaylist, playlistname, setPlaylistnam
         <div className={`playlistdone-flexbox-${finishPlaylist}`}>
             <p1>Playlist created!</p1>
             <div className="images-flex">
-                <img className="playlist-image" src={playlistImages[0]}></img>
-                <img className="playlist-image" src={playlistImages[1]}></img>
-                <img className="playlist-image" src={playlistImages[2]}></img>
-                <img className="playlist-image" src={playlistImages[3]}></img>
+            {playlistImages.map((image) =>
+                <img className="playlist-image" src={image}></img>
+            )}
             </div>
             <a href={playlistURL} target="_blank" className="playlist-link">Open in Spotify</a>
         </div>

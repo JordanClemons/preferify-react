@@ -25,7 +25,7 @@ function MusicPage() {
   const [songURI, setSongURI] = useState([]);
   const [playlistURL, setPlaylistURL] = useState("");
   const [finishplaylist, setFinishplaylist] = useState(false);
-  const [playlistImages, setPlaylistImages] = useState();
+  const [playlistImages, setPlaylistImages] = useState([]);
 
   const [shortTerm, setShortTerm] = useState([]);
   const [mediumTerm, setMediumTerm] = useState([]);
