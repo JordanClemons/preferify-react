@@ -90,6 +90,7 @@ const closeModal = e => {
   setModal(false);
   setSelectedSong();
   setPlaylistModal(false);
+  setPlaylistname("");
 };
 
 /* UseEffect renders */

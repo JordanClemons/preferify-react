@@ -18,10 +18,10 @@
 
 .playlist-input{
     width: 75%;
-    height: 2vmax;
-    margin-top: 2.5vmax;
+    height: 2.5vmax;
+    margin-top: 3vmin;
     outline: none;
-    font-size: 1.1vmax;
+    font-size: 1.3vmax;
 }
 
 

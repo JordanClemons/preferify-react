@@ -36,13 +36,13 @@
 .dropdown{
     outline: none;
     color: white;
-    border-width: .25vmax;
-    border-color: grey;
+    border-width: medium;
+    border-color: #004d00;
     background-color: #1DB954;
     margin-right: 1vw;
-    height: 3.75vmax;
+    height: 3.75vh;
     width: 20vmin;
-    font-size: 3vmin;
+    font-size: 2vh;
     -webkit-appearance: none;
     transition: .2s;
     text-align-last:center;
@@ -78,9 +78,10 @@
 
 .playlist-button-text{
     opacity: 1;
-    font-weight: bold;
+    font-weight: bolder;
     position: absolute;
-    margin-top: 2.1vmax;
+    margin-top: 25%;
+    width: 100%;
 }
 
 .button-flex{
