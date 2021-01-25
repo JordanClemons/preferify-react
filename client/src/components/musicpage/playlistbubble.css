@@ -68,12 +68,14 @@
 }
 
 .images-flex{
+    border-radius: 10px;
+    position: relative;
+
     background-color: red;
     width: 20vmin;
     height: 20vmin;
     overflow: hidden;
     display: flex;
-    justify-content: center;
     align-content: center;
     flex-direction: row;
     flex-flow: wrap;
@@ -81,7 +83,7 @@
 }
 
 .playlist-image{
-    width: 50%;
+    height: 50%;
 }
 
 .playlist-link{
