@@ -68,8 +68,10 @@
 }
 
 .images-flex{
+    background-color: red;
     width: 20vmin;
     height: 20vmin;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-content: center;
@@ -79,7 +81,7 @@
 }
 
 .playlist-image{
-    width: 10vmin;
+    width: 50%;
 }
 
 .playlist-link{
