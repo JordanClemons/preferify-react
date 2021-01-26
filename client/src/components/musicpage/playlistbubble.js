@@ -15,7 +15,7 @@ function PlaylistBubble({limit, time, savePlaylist, playlistname, setPlaylistnam
 
     const checkPlaylistName = () =>{
         if(playlistname === ""){
-            setSubmitPlaylistName("Preferify my top " + number + " songs " + timespan);
+            setSubmitPlaylistName("Preferify top songs " + timespan);
         }
         else{setSubmitPlaylistName(playlistname);}
     }
@@ -65,7 +65,7 @@ function PlaylistBubble({limit, time, savePlaylist, playlistname, setPlaylistnam
     <div className="playlistbubble-container">
         <div className={`playlist-flexbox-${finishPlaylist}`}>
             <p1 className="playlist-title">Playlist Title</p1>
-            <input className="playlist-input" type="text" placeholder={`My Preferify top ${limit} songs ${timespan}`} onChange={e => changePlaylistName(e)} value={playlistname}></input>
+            <input className="playlist-input" type="text" placeholder={`Preferify top songs ${timespan}`} onChange={e => changePlaylistName(e)} value={playlistname}></input>
             <button className="playlistbubble-button" onClick={() => checkPlaylistName()}>Make Playlist</button>
         </div>
         <div className={`playlistdone-flexbox-${finishPlaylist}`}>
