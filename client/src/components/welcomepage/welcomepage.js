@@ -8,7 +8,7 @@ import "aos/dist/aos.css";
 
 const WelcomePage = () =>{
     useEffect(() => {
-        Aos.init({duration: 2000});
+        Aos.init({duration: 2000, offset:15});
     }, []);
 
     const DEVOPMENTLINK= "http://localhost:8888/login";
@@ -34,7 +34,7 @@ const WelcomePage = () =>{
             </div>
             <div className="otherinfo-container">
                 <div>
-                    <img src= {Placeholder} className="image"  data-aos="fade-up"/>
+                    <img src= {Placeholder} className="image main-image"  data-aos="fade-up"/>
                 </div>
                 <div className="other-div" data-aos="fade-up">
                     <p1 className="welcome-para-text"  > Find your favorite songs. At any time.</p1>
@@ -49,7 +49,7 @@ const WelcomePage = () =>{
             </div>
             <div className="github-info" >
                 <p1 className="creator">Created by Jordan Clemons</p1>
-                <img src= {git} className="git-logo"/>
+                <a href="https://github.com/JordanClemons/preferify-react" target="_blank"><img src= {git} className="git-logo"/></a>
             </div>
         </div>
     )

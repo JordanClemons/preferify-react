@@ -44,13 +44,12 @@
     border: none;
     outline: none;
     font-size: 1.25vmax;
-    opacity: .9;
     transition: .3s;
     animation: fadeInSlow ease 2s;
 }
 
 .welcome-button:hover{
-    opacity: 1;
+    width: 19vmax;
 }
 
 .otherinfo-container{
@@ -63,27 +62,32 @@
 }
 
 .image{
-    width: 66vw;
+    width: 90%;
+    min-width: 66vw;
     border-radius: 20px;
-    margin-bottom: 4vh;
+}
+
+.main-image{
+    margin-bottom: 10vmin;
 }
 
 .welcome-para-text{
     font-size: 2vmax;
-    margin-bottom: 2vh;
+    margin-bottom: 0vh;
 }
 
 .welcome-para-subtext{
-    font-size: 3.5vmin;
-    margin-bottom: 4vh;
+    font-size: 1.5vmax;
+    margin-bottom: 2vh;
     color: rgba(255, 255, 255, 0.6);
-    width: 70vmin;
+    width: 90%;
 }
 
 .other-div{
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 10vh;
 }
 
 .github-info{
