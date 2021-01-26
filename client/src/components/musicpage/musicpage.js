@@ -7,6 +7,7 @@ import Typed from 'react-typed';
 import Song from './song.js';
 import SongDetail from './songdetail.js';
 import PlaylistBubble from './playlistbubble.js';
+import git from '../images/github-logo.png';
 import './musicpage.css';
 
 
@@ -210,6 +211,10 @@ const closeModal = e => {
           {songs.map((song) =>
             <Song song={song} onClick={modalOn}></Song>
           )}
+        </div>
+        <div className="git-info">
+                <p1 className="git-creator">Created by Jordan Clemons</p1>
+                <img src= {git} className="logo"/>
         </div>
         <div className='music-header'>
             <Typed

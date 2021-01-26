@@ -45,12 +45,13 @@
     border-radius: 20px;
     outline: none;
     margin: 4vmin;
-    opacity: .7;
+    opacity: 1;
     transition: .3s;
 }
 
 .playlistbubble-button:hover{
-    opacity: 1;
+    width: 45%;
+    background-color: #00cc44;
 }
 
 .playlistdone-flexbox-true{
