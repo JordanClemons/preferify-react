@@ -23,7 +23,7 @@ const WelcomePage = () =>{
                 <div className="welcome-paragraph">
                     <Typed
                     className="moving-text"
-                    strings={['Find your favorite songs. At any time.', 'Make an awesome playlist.', 'Weclome to Preferify.']}
+                    strings={['Find your top songs. At any time.', 'Make an awesome playlist.', 'Weclome to Preferify.']}
                     typeSpeed={40}
                     />
                     <p1 className="welcome-para-subtext header-sub">A place for all your favorite Spotify songs.</p1>

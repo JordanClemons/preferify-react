@@ -26,6 +26,7 @@
 
 .moving-text{
     margin-bottom: 2vh;
+    font-size: 5.5vw;
 }
 
 .header-sub{
@@ -35,14 +36,14 @@
 .welcome-button{
     border-radius: 20px;
     margin-top: 3vmin;
-    width: 225px;
-    height: 50px;
+    width: 15vmax;
+    height: 8vmin;
     background-color: #1DB954;
     box-shadow: 0 5px 10px rgba(30, 215, 96, .4);
     color: white;
     border: none;
     outline: none;
-    font-size: 20px;
+    font-size: 1.25vmax;
     opacity: .9;
     transition: .3s;
     animation: fadeInSlow ease 2s;
@@ -73,7 +74,7 @@
 }
 
 .welcome-para-subtext{
-    font-size: 3vmin;
+    font-size: 3.5vmin;
     margin-bottom: 4vh;
     color: rgba(255, 255, 255, 0.6);
     width: 70vmin;
