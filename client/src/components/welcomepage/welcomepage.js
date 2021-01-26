@@ -4,6 +4,9 @@ import Aos from 'aos';
 import "aos/dist/aos.css";
  import './welcomepage.css';
  import Placeholder from '../images/placeholder-image1.jpg';
+ import Image1 from '../images/mac-iphone.png';
+ import iPadImg from '../images/ipad.png';
+ import demo from '../images/demo-trim.gif';
  import git from '../images/github-logo.png';
 
 const WelcomePage = () =>{
@@ -34,17 +37,19 @@ const WelcomePage = () =>{
             </div>
             <div className="otherinfo-container">
                 <div>
-                    <img src= {Placeholder} className="image main-image"  data-aos="fade-up"/>
+                    <img src= {Image1} className="image main-image"  data-aos="fade-up"/>
                 </div>
-                <div className="other-div" data-aos="fade-up">
-                    <p1 className="welcome-para-text"  > Find your favorite songs. At any time.</p1>
-                    <p1 className="welcome-para-subtext"  > Preferify uses Spotify's official API to find your most listened to songs of any time period.</p1>
-                    <img src= {Placeholder} className="image" />
+                <div className="ipad-div" data-aos="fade-up">
+                    <div className="vert-flex">
+                        <p1 className="welcome-para-text"  > Find your favorite songs. At any time.</p1>
+                        <p1 className="welcome-para-subtext"  > Preferify uses Spotify's official API to find your most listened to songs of any time period.</p1>
+                    </div>
+                    <img src= {iPadImg} className="ipad" />
                 </div>
                 <div className="other-div" data-aos="fade-up">
                     <p1 className="welcome-para-text" >Make an awesome playlist.</p1>
                     <p1 className="welcome-para-subtext" >Transform your most listened to songs into a playlist with the touch of a button.</p1>
-                    <img src= {Placeholder} className="image" />
+                    <img src= {demo} className="image2" />
                 </div>
             </div>
             <div className="github-info" >
