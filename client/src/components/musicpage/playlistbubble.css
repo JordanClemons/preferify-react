@@ -71,8 +71,6 @@
 .images-flex{
     border-radius: 10px;
     position: relative;
-
-    background-color: red;
     width: 20vmin;
     height: 20vmin;
     overflow: hidden;

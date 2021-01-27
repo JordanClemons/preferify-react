@@ -41,8 +41,8 @@ const WelcomePage = () =>{
                 </div>
                 <div className="ipad-div" data-aos="fade-up">
                     <div className="vert-flex">
-                        <p1 className="welcome-para-text"  > Find your favorite songs. At any time.</p1>
-                        <p1 className="welcome-para-subtext"  > Preferify uses Spotify's official API to find your most listened to songs of any time period.</p1>
+                        <p1 className="welcome-para-text"  > Find your favorite songs.</p1>
+                        <p1 className="welcome-para-subtext"  > Preferify uses Spotify's official API to find your most listened to songs.</p1>
                     </div>
                     <img src= {iPadImg} className="ipad" />
                 </div>
@@ -53,7 +53,7 @@ const WelcomePage = () =>{
                 </div>
             </div>
             <div className="github-info" >
-                <p1 className="creator">Created by Jordan Clemons</p1>
+                <a className="creator" href={"mailto:" + "devbyjordan@gmail.com"}>Created by Jordan Clemons</a>
                 <a href="https://github.com/JordanClemons/preferify-react" target="_blank"><img src= {git} className="git-logo"/></a>
             </div>
         </div>

@@ -213,7 +213,7 @@ const closeModal = e => {
           )}
         </div>
         <div className="git-info">
-                <p1 className="git-creator">Created by Jordan Clemons</p1>
+                <a className="git-creator" href={"mailto:" + "devbyjordan@gmail.com"}>Created by Jordan Clemons</a>
                 <a href="https://github.com/JordanClemons/preferify-react" target="_blank"><img src= {git} className="logo"/></a>
         </div>
         <div className='music-header'>
