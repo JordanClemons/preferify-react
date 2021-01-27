@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Preferify",
+  "name": "Preferify - Your top songs.",
   "icons": [
     {
       "src": "favicon.ico",
