@@ -20,9 +20,6 @@ function PlaylistBubble({limit, time, savePlaylist, playlistname, setPlaylistnam
         else{setSubmitPlaylistName(playlistname);}
     }
 
-    // useEffect(() =>{
-    //     setPlaylistname("Preferify top " + number + " songs " + timespan);
-    // }, [timespan, number]);
 
     useEffect(() =>{
         if(time === "short_term"){
@@ -37,29 +34,10 @@ function PlaylistBubble({limit, time, savePlaylist, playlistname, setPlaylistnam
       }, [time]);
 
     useEffect(() =>{
-        if(limit === "10"){
-            setNumber("10");
-        }
-        else if(limit === "25"){
-            setNumber("25");
-        }
-        else if(limit === "50"){
-            setNumber("50");
-        }
-    }, [limit]);
-
-    useEffect(() =>{
         if(submitPlaylistName.length > 0){
             savePlaylist(submitPlaylistName);
         }
     }, [submitPlaylistName]);
-
-    playlistImages.map((image) => {
-        console.log(image);
-    })
-    console.log(playlistImages[0]);
-
-    const lol = ["papa", "mama", "dada"];
 
   return (
     <div className="playlistbubble-container">

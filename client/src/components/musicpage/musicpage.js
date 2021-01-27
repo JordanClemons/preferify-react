@@ -113,6 +113,7 @@ const closeModal = e => {
 
   useEffect(() =>{
     getSongs();
+    console.log("test");
   }, []);
 
   useEffect(() =>{
