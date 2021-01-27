@@ -36,7 +36,7 @@ const WelcomePage = () =>{
                 </form>
             </div>
             <div className="otherinfo-container">
-                <div>
+                <div className="main-div">
                     <img src= {Image1} className="image main-image"  data-aos="fade-up"/>
                 </div>
                 <div className="ipad-div" data-aos="fade-up">
