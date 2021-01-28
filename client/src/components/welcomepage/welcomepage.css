@@ -187,4 +187,13 @@
         margin-bottom: 6vh;
     }
 
+    .welcome-button{
+        width: 20vmax;
+        height: 5vmax;
+    }
+
+    .welcome-button:hover{
+        width: 25vmax;
+    }
+
   }
