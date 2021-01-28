@@ -14,7 +14,7 @@ const WelcomePage = () =>{
     }, []);
 
     const DEVOPMENTLINK= "http://localhost:8888/login";
-    const PRODUCTIONLINK= "https://preferify.herokuapp.com/login";
+    const PRODUCTIONLINK= "https://preferify.app/login";
 
     return(
         <div>
