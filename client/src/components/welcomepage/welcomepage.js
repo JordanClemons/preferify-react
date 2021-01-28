@@ -3,7 +3,6 @@ import Typed from 'react-typed';
 import Aos from 'aos';
 import "aos/dist/aos.css";
  import './welcomepage.css';
- import Placeholder from '../images/placeholder-image1.jpg';
  import Image1 from '../images/mac-iphone.png';
  import iPadImg from '../images/ipad.png';
  import demo from '../images/demo-trim.gif';
@@ -37,24 +36,24 @@ const WelcomePage = () =>{
             </div>
             <div className="otherinfo-container">
                 <div className="main-div" data-aos="fade-up">
-                    <img src= {Image1} className="image main-image"/>
+                    <img src= {Image1} className="image main-image" alt="design on mac"/>
                 </div>
                 <div className="ipad-div" data-aos="fade-up">
                     <div className="vert-flex">
                         <p1 className="welcome-para-text"  > Find your favorite songs.</p1>
                         <p1 className="welcome-para-subtext"  > Preferify uses Spotify's official API to find your most listened to songs.</p1>
                     </div>
-                    <img src= {iPadImg} className="ipad" />
+                    <img src= {iPadImg} className="ipad" alt="design on ipad"/>
                 </div>
                 <div className="other-div" data-aos="fade-up">
                     <p1 className="welcome-para-text" >Make an awesome playlist.</p1>
                     <p1 className="welcome-para-subtext" >Transform your most listened to songs into a playlist with the touch of a button.</p1>
-                    <img src= {demo} className="image2" />
+                    <img src= {demo} className="image2" alt="demo gif"/>
                 </div>
             </div>
             <div className="github-info" >
-                <a className="creator" href={"mailto:" + "devbyjordan@gmail.com"}>Created by Jordan Clemons</a>
-                <a href="https://github.com/JordanClemons/preferify-react" target="_blank"><img src= {git} className="git-logo"/></a>
+                <a className="creator" href={"mailto:devbyjordan@gmail.com"}>Created by Jordan Clemons</a>
+                <a href="https://github.com/JordanClemons/preferify-react" target="_blank" rel="noreferrer"><img src= {git} className="git-logo" alt="git logo"/></a>
             </div>
         </div>
     )

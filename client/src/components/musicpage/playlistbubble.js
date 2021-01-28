@@ -4,7 +4,6 @@ import './playlistbubble.css';
 function PlaylistBubble({limit, time, savePlaylist, playlistname, setPlaylistname, finishPlaylist, playlistURL, playlistImages}) {
 
     const [timespan, setTimespan] = useState();
-    const [number, setNumber] = useState("10");
     const [submitPlaylistName, setSubmitPlaylistName] = useState("");
 
     const changePlaylistName = e =>{
@@ -50,10 +49,10 @@ function PlaylistBubble({limit, time, savePlaylist, playlistname, setPlaylistnam
             <p1>Playlist created!</p1>
             <div className="images-flex">
             {playlistImages.map((image) =>
-                <img className="playlist-image" src={image}></img>
+                <img className="playlist-image" src={image} alt="playlist thumbnail"></img>
             )}
             </div>
-            <a href={playlistURL} target="_blank" className="playlist-link">Open in Spotify</a>
+            <a href={playlistURL} target="_blank" className="playlist-link" rel="noreferrer">Open in Spotify</a>
         </div>
     </div>
   );

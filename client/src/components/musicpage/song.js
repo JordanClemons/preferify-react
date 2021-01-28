@@ -12,7 +12,7 @@ function Song({song, onClick}) {
 
   return (
     <div className="song-bubble" data-aos="fade-up" onClick={() => onClick(song)}>
-      <img className="album-art" src={song.album.images[0].url}></img>
+      <img className="album-art" src={song.album.images[0].url} alt="album art"></img>
       <div className ="song-info-container">
         <p1 className="song-title">{song.name}</p1>
         <p1 className="song-artist">{song.artists[0].name}</p1>

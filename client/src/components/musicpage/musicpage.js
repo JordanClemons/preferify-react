@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import queryString from 'query-string';
-import {BrowserRouter as Router, Route, Switch, Link, Redirect} from "react-router-dom";
+import {BrowserRouter as Redirect} from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleNotch, faCompactDisc} from '@fortawesome/free-solid-svg-icons'
 import Typed from 'react-typed';
@@ -214,8 +214,8 @@ const closeModal = e => {
           )}
         </div>
         <div className="git-info">
-                <a className="git-creator" href={"mailto:" + "devbyjordan@gmail.com"}>Created by Jordan Clemons</a>
-                <a href="https://github.com/JordanClemons/preferify-react" target="_blank"><img src= {git} className="logo"/></a>
+                <a className="git-creator" href={"mailto:devbyjordan@gmail.com"}>Created by Jordan Clemons</a>
+                <a href="https://github.com/JordanClemons/preferify-react" target="_blank" rel="noreferrer"><img src= {git} alt="git-link" className="logo"/></a>
         </div>
         <div className='music-header'>
             <Typed

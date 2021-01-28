@@ -23,7 +23,7 @@
 
 .music-input-container{
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
     width: 80vmin;
