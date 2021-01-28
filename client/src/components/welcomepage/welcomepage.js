@@ -53,6 +53,7 @@ const WelcomePage = () =>{
             </div>
             <div className="github-info" >
                 <a className="creator" href={"mailto:devbyjordan@gmail.com"}>Created by Jordan Clemons</a>
+                <a href="https://github.com/JordanClemons/preferify-react" target="_blank" rel="noreferrer"><img src= {git} className="git-logo" alt="git logo"/></a>
             </div>
         </div>
     )
