@@ -14,7 +14,7 @@ const WelcomePage = () =>{
     }, []);
 
     const DEVOPMENTLINK= "http://localhost:8888/login";
-    const PRODUCTIONLINK= "https://preferify.app/login";
+    const PRODUCTIONLINK= "https://www.preferify.app/login";
 
     return(
         <div>
