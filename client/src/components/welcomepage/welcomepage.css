@@ -11,7 +11,7 @@
 .welcome-header{
     font-size: 4vh;
     opacity: 1;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .welcome-paragraph{
@@ -36,7 +36,7 @@
 .welcome-button{
     border-radius: 20px;
     width: 15vmax;
-    height: 8vmin;
+    height: 4vmax;
     background-color: #1DB954;
     box-shadow: 0 5px 10px rgba(30, 215, 96, .4);
     color: white;
@@ -153,3 +153,38 @@
     75% {opacity:0;}
     100% {opacity:.9;}
     }
+
+/* MOBILE */
+@media(max-width:425px){
+    .welcome-paragraph{
+        margin-top: 25vh;
+    }
+
+    .otherinfo-container{
+        margin-top: 15vh;
+    }
+
+    .main-div{
+        overflow: hidden;
+        width: 100%;
+    }
+    
+    .main-image{
+        position: relative;
+        right: 40vw;
+        width: 160vw;
+    }
+
+    .ipad{
+        width: 30%;
+    }
+
+    .main-div{
+        margin-bottom: 6vh;
+    }
+
+    .ipad-div{
+        margin-bottom: 6vh;
+    }
+
+  }
