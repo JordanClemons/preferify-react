@@ -36,8 +36,8 @@ const WelcomePage = () =>{
                 </form>
             </div>
             <div className="otherinfo-container">
-                <div className="main-div">
-                    <img src= {Image1} className="image main-image"  data-aos="fade-up"/>
+                <div className="main-div" data-aos="fade-up">
+                    <img src= {Image1} className="image main-image"/>
                 </div>
                 <div className="ipad-div" data-aos="fade-up">
                     <div className="vert-flex">
