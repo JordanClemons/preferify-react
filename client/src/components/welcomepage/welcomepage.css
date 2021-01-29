@@ -42,7 +42,7 @@
     color: white;
     border: none;
     outline: none;
-    font-size: 1.25vmax;
+    font-size: 1.6vmax;
     transition: .3s;
     animation: fadeInSlow ease 2s;
     margin-top: 2vh;
@@ -74,7 +74,7 @@
 }
 
 .main-div{
-    margin-bottom: 2vh;
+    margin-bottom: 6vh;
 }
 
 .ipad{
@@ -105,7 +105,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-bottom: 2vh;
+    margin-bottom: 6vh;
 }
 
 .vert-flex{
@@ -194,6 +194,10 @@
 
     .welcome-button:hover{
         width: 25vmax;
+    }
+
+    .image2{
+        width: 90%;
     }
 
   }

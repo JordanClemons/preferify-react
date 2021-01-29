@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import queryString from 'query-string';
-import {BrowserRouter as Redirect} from "react-router-dom";
+import {BrowserRouter as Router, Route, Switch, Link, Redirect} from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleNotch, faCompactDisc} from '@fortawesome/free-solid-svg-icons'
 import Typed from 'react-typed';
@@ -14,7 +14,7 @@ import './musicpage.css';
 
 function MusicPage() {
 
-  var token = queryString.parse(window.location.search).access_token;
+  const [token, setToken] = useState();
   const [songs, setSongs] = useState([]);
   const [time, setTime] = useState("short_term");
   const [limit, setLimit] = useState();
@@ -35,6 +35,13 @@ function MusicPage() {
   const node = useRef();
   const node2 = useRef();
 
+  const getToken = () => {
+    var str = queryString.parse(window.location.search).access_token;
+    if(str !== undefined){
+      setToken(str);
+    }
+    else{setToken("");}
+  }
 
   const getSongs = () =>{
     setLoad(true);
@@ -96,9 +103,11 @@ const playlistModalOn = () =>{
 }
 
 const closeModal = e => {
-  if (node.current.contains(e.target) || node2.current.contains(e.target)){
-    // inside click
-    return;
+  if(node.current !== undefined && node2.current !== undefined){
+    if (node.current.contains(e.target) || node2.current.contains(e.target)){
+      // inside click
+      return;
+    }
   }
   // outside click
   setModal(false);
@@ -112,9 +121,14 @@ const closeModal = e => {
 /* UseEffect renders */
 
   useEffect(() =>{
-    getSongs();
-    console.log("test");
+    getToken();
   }, []);
+
+  useEffect(() =>{
+    if(token !== undefined){
+      getSongs();
+    }
+  }, [token]);
 
   useEffect(() =>{
     if(shortTerm !== undefined){
@@ -177,16 +191,14 @@ const closeModal = e => {
 
   /* Returns */
 
-  if(token == null){
-    return(
-      <Redirect to="/"></Redirect>  //If not logged in go back to login
-    )
+  if(token === ""){
+    console.log("lol");
+    return (<Redirect to="/" />);
   }
 
   if(shortTerm === undefined){
-    return(
-      <Redirect to="/"></Redirect>  //If not logged in go back to login
-    )
+    console.log("wtf");
+    return (<Redirect to="/" />);
   }
 
   return (
