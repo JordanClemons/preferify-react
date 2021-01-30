@@ -115,6 +115,7 @@
     border-radius: 10px;
     border-style: solid;
     border-width: .25vmax;
+    border-color: #6B796F;
     font-size: 1.25vmax;
     color: white;
     transition: .3s;
@@ -131,7 +132,7 @@
 }
 
 .open-container:hover{
-    background-color: grey;
+    background-color: #6B796F;
 }
 
 .twitter-link{
