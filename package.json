@@ -8,6 +8,7 @@
     "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.15.4",
     "querystring": "^0.2.0",
     "request": "^2.81.0"

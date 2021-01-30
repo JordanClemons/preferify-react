@@ -1,20 +1,36 @@
-import React, {useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
+import {BrowserRouter as Router, Route, Switch, Link, Redirect} from "react-router-dom";
 import Typed from 'react-typed';
 import Aos from 'aos';
+import queryString from 'query-string';
 import "aos/dist/aos.css";
- import './welcomepage.css';
- import Image1 from '../images/mac-iphone.png';
- import iPadImg from '../images/ipad.png';
- import demo from '../images/demo-trim.gif';
- import git from '../images/github-logo.png';
+import './welcomepage.css';
+import Image1 from '../images/mac-iphone.png';
+import iPadImg from '../images/ipad.png';
+import demo from '../images/demo-trim.gif';
+import git from '../images/github-logo.png';
 
 const WelcomePage = () =>{
+
+    const [token, setToken] = useState();
+
     useEffect(() => {
         Aos.init({duration: 2000, offset:15});
     }, []);
 
+    useEffect(() => {
+        var str = queryString.parse(window.location.search).access_token;
+        setToken(str);
+    }, []);
+
     const DEVOPMENTLINK= "http://localhost:8888/login";
     const PRODUCTIONLINK= "https://www.preferify.app/login";
+
+    if(token !== undefined){
+        return(
+            <Redirect to={{pathname: "/music", token:{token}}}></Redirect>
+        )
+    }
 
     return(
         <div>

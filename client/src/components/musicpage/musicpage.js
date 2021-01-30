@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import queryString from 'query-string';
-import {BrowserRouter as Router, Route, Switch, Link, Redirect} from "react-router-dom";
+import {BrowserRouter as Router, Route, Switch, Link, Redirect, useLocation} from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleNotch, faCompactDisc} from '@fortawesome/free-solid-svg-icons'
 import Typed from 'react-typed';
@@ -14,7 +14,7 @@ import './musicpage.css';
 
 function MusicPage() {
 
-  const [token, setToken] = useState();
+  const [token, setToken] = useState("");
   const [songs, setSongs] = useState([]);
   const [time, setTime] = useState("short_term");
   const [limit, setLimit] = useState();
@@ -35,97 +35,14 @@ function MusicPage() {
   const node = useRef();
   const node2 = useRef();
 
-  const getToken = () => {
-    var str = queryString.parse(window.location.search).access_token;
-    if(str !== undefined){
-      setToken(str);
-    }
-    else{setToken("");}
-  }
-
-  const getSongs = () =>{
-    setLoad(true);
-    fetch('https://api.spotify.com/v1/me/top/tracks?time_range=short_term&limit=50',{
-    headers: {'Authorization': 'Bearer ' + token}
-    }).then(response => response.json())
-    .then(data => setShortTerm(data.items))
-    fetch('https://api.spotify.com/v1/me/top/tracks?time_range=medium_term&limit=50',{
-    headers: {'Authorization': 'Bearer ' + token}
-    }).then(response => response.json())
-    .then(data => setMediumTerm(data.items))
-    fetch('https://api.spotify.com/v1/me/top/tracks?time_range=long_term&limit=50',{
-    headers: {'Authorization': 'Bearer ' + token}
-    }).then(response => response.json())
-    .then(data => setLongTerm(data.items))
-    setTimeout(() => setLoad(false), 500);
-}
-
-const savePlaylist = (playlistName) =>{
-  fetch('https://api.spotify.com/v1/me',{
-    headers: {'Authorization': 'Bearer ' + token}
-  }).then(response => response.json())
-  .then((data) => {
-    var userID = data.id;
-    fetch(`https://api.spotify.com/v1/users/${userID}/playlists`, {
-      method: 'POST',
-      headers: {'Authorization': 'Bearer ' + token},
-      body: JSON.stringify({name: playlistName})
-    }).then(response => response.json())
-    .then((data) => {
-      setPlaylistURL(data.external_urls.spotify);
-      var playlistID = data.id;
-      fetch(`https://api.spotify.com/v1/users/${userID}/playlists/${playlistID}/tracks`, {
-        method: 'POST', 
-        headers: {'Authorization': 'Bearer ' + token},
-        body: JSON.stringify({uris: songURI})
-      }).then((setFinishplaylist(true)))
-    })
-  })
-}
-
-/* Functions */
-
-const handleLimit = e =>{
-  setLimit(e.target.value);
-}
-
-const handleTerm = e =>{
-  setTime(e.target.value);
-}
-
-const modalOn = (song) => {
-  setModal(!modal);
-  setSelectedSong(song);
-}
-
-const playlistModalOn = () =>{
-  setPlaylistModal(!playlistModal);
-}
-
-const closeModal = e => {
-  if(node.current !== undefined && node2.current !== undefined){
-    if (node.current.contains(e.target) || node2.current.contains(e.target)){
-      // inside click
-      return;
-    }
-  }
-  // outside click
-  setModal(false);
-  setSelectedSong();
-  setPlaylistModal(false);
-  setPlaylistname("");
-  setPlaylistURL("");
-  setFinishplaylist(false);
-};
-
-/* UseEffect renders */
+  /* UseEffect renders */
 
   useEffect(() =>{
     getToken();
   }, []);
 
   useEffect(() =>{
-    if(token !== undefined){
+    if(token !== "" && token !== undefined){
       getSongs();
     }
   }, [token]);
@@ -189,15 +106,107 @@ const closeModal = e => {
     };
   }, []);
 
+  var init = useLocation().token;
+  if(init === undefined && localStorage.getItem("token") === undefined){
+    return(<Redirect to= "/"></Redirect>)
+  }
+
+  /* Spotify functions */
+  
+  const getToken = () => {
+    if(init !== undefined){
+      localStorage.setItem('token', init.token);
+      setToken(init.token);
+    }
+    else if(localStorage.getItem("token") !== undefined){
+      setToken(localStorage.getItem("token"));
+    }
+  }
+
+  const getSongs = () =>{
+    setLoad(true);
+    fetch('https://api.spotify.com/v1/me/top/tracks?time_range=short_term&limit=50',{
+    headers: {'Authorization': 'Bearer ' + token}
+    }).then(response => response.json())
+    .then(data => setShortTerm(data.items))
+    fetch('https://api.spotify.com/v1/me/top/tracks?time_range=medium_term&limit=50',{
+    headers: {'Authorization': 'Bearer ' + token}
+    }).then(response => response.json())
+    .then(data => setMediumTerm(data.items))
+    fetch('https://api.spotify.com/v1/me/top/tracks?time_range=long_term&limit=50',{
+    headers: {'Authorization': 'Bearer ' + token}
+    }).then(response => response.json())
+    .then(data => setLongTerm(data.items))
+    setTimeout(() => setLoad(false), 500);
+}
+
+const savePlaylist = (playlistName) =>{
+  fetch('https://api.spotify.com/v1/me',{
+    headers: {'Authorization': 'Bearer ' + token}
+  }).then(response => response.json())
+  .then((data) => {
+    var userID = data.id;
+    fetch(`https://api.spotify.com/v1/users/${userID}/playlists`, {
+      method: 'POST',
+      headers: {'Authorization': 'Bearer ' + token},
+      body: JSON.stringify({name: playlistName})
+    }).then(response => response.json())
+    .then((data) => {
+      setPlaylistURL(data.external_urls.spotify);
+      var playlistID = data.id;
+      fetch(`https://api.spotify.com/v1/users/${userID}/playlists/${playlistID}/tracks`, {
+        method: 'POST', 
+        headers: {'Authorization': 'Bearer ' + token},
+        body: JSON.stringify({uris: songURI})
+      }).then((setFinishplaylist(true)))
+    })
+  })
+}
+
+/* Little Functions */
+
+const handleLimit = e =>{
+  setLimit(e.target.value);
+}
+
+const handleTerm = e =>{
+  setTime(e.target.value);
+}
+
+const modalOn = (song) => {
+  setModal(!modal);
+  setSelectedSong(song);
+}
+
+const playlistModalOn = () =>{
+  setPlaylistModal(!playlistModal);
+}
+
+const closeModal = e => {
+  if(node.current !== undefined && node2.current !== undefined){
+    if (node.current.contains(e.target) || node2.current.contains(e.target)){
+      // inside click
+      return;
+    }
+  }
+  // outside click
+  setModal(false);
+  setSelectedSong();
+  setPlaylistModal(false);
+  setPlaylistname("");
+  setPlaylistURL("");
+  setFinishplaylist(false);
+};
+
+
+
   /* Returns */
 
-  if(token === ""){
-    console.log("lol");
+  if(token === undefined){
     return (<Redirect to="/" />);
   }
 
   if(shortTerm === undefined){
-    console.log("wtf");
     return (<Redirect to="/" />);
   }
 
