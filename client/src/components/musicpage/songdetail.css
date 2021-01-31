@@ -6,14 +6,19 @@
     border-radius: 15px;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 .songdetail-flexbox{
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 
 .album-art-detail{
@@ -24,8 +29,39 @@
 .song-name-artist-detail{
     font-size: 3vmin;
     white-space: nowrap;
+    background-color: red;
 }
 
 .spotify-link{
     color: #1DB954;
+}
+
+.open-song-container{
+    background-color: #2D332E;
+    outline: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 25vmin;
+    height: 3vmax;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: .25vmax;
+    border-color: #6B796F;
+    font-size: 2.25vmin;
+    color: white;
+    transition: .3s;
+}
+
+.song-name{
+    font-size: 3.5vmin;
+}
+
+.spotify-logo-song{
+    height: 2vmax;
+    width: 2vmax;
+}
+
+.open-song-container:hover{
+    background-color: #6B796F;
 }
