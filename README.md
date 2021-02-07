@@ -8,8 +8,14 @@ It is a ReactJs webapp that uses [Spotify's official API](https://developer.spot
 
 ![alt text](https://github.com/JordanClemons/preferify-react/blob/master/client/src/components/images/mac-iphone.png "Song")
 
-To run the run the project on a local server:
+Add proper callback URL through the Spotify Developer Dashboard
 
+# To set up Spotify credentials
+```
+export SPOTIFY_CLIENT_ID=yourID
+export SPOTIFY_CLIENT_SECRET=yourSecret
+```
+# To run the run the project on a local server:
 ```
 npm install
 npm start
